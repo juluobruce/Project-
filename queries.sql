@@ -1,47 +1,23 @@
-DROP TABLE education
 
-CREATE TABLE education (
-	"Year" INT NOT NULL,
-	"State" VARCHAR(50) NOT NULL,
-	"District Name" VARCHAR(50) NOT NULL, 
-	"Average Score" FLOAT NOT NULL,
-	"Test Subject" VARCHAR(225) NOT NULL,
-	"Grade Year" INT NOT NULL,
-	"Total Revenue" FLOAT NOT NULL,
-	"Instructors Expenditures" FLOAT NOT NULL,
-	"Support Services Expenditures" FLOAT NOT NULL,
-	"Other Expenditures" FLOAT
-);
+--Adding new a table 
+DROP TABLE education_sql
 
+CREATE TABLE education_sql (
+	"YEAR" INT NOT NULL,
+	"STATE" VARCHAR(250) NOT NULL,
+	"NAME" VARCHAR(250) NOT NULL, 
+	"AVG_SCORE" FLOAT NOT NULL,
+	"TEST_SUBJECT" VARCHAR(225) NOT NULL, 
+	"TEST_YEAR" INT NOT NULL, 
+	"TOTAL_REVENUE" FLOAT NOT NULL,
+	"FEDERAL_REVENUE" FLOAT,
+	"STATE REVENUE" FLOAT,
+	"LOCAL REVENUE" FLOAT,
+	"TOTAL EXPENDITURES" FLOAT NOT NULL, 
+	"INSTRUCTION_EXPENDITURE" FLOAT,
+	"SUPPORT_SERVICES_EXPENDITURE" FLOAT,
+	"OTHER_EXPENDITURE" FLOAT);
+	
+	
 
-SELECT * FROM education
-
-
-SELECT
-"State",
-"Average Score",
-"Total Revenue"
-from education
-
-Select 
-"State",
-"Test Subject",
-"Total Revenue",
-MAX("Average Score") as "Max Avg Score",
-Min("Average Score") as "Min Avg Score"
-from education 
-Group by "Total Revenue","State", "Test Subject"
-Order by "Total Revenue" DESC;
-
-
-Select 
-"State",
---"Test Subject",
-max("Average Score") as Score
-from education
-GROUP BY "State" --"Test Subject"
-Order by Score DESC;
-
---
-
-
+SELECT * FROM education_sql
