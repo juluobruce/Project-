@@ -13,3 +13,5 @@ CREATE TABLE states (
 	other_curr_spending FLOAT,
 	capital_outlay_exp FLOAT
 );
+
+SELECT * from states;
